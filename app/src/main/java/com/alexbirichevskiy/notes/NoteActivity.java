@@ -1,22 +1,23 @@
 package com.alexbirichevskiy.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity{
+public class NoteActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_note);
 
-        NotesListFragment fragment = new NotesListFragment();
-
-        fragment.setArguments(getIntent().getExtras());
+        NoteFragment fragmentNote = new NoteFragment();
+        fragmentNote.setArguments(getIntent().getExtras());
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.main_activity, fragment)
+                .replace(R.id.note_activity, fragmentNote)
                 .commit();
+
     }
 }
