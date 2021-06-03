@@ -1,7 +1,6 @@
 package com.alexbirichevskiy.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.res.Configuration;
 import android.os.Bundle;
 
@@ -19,15 +18,11 @@ public class NoteActivity extends AppCompatActivity{
                     .replace(R.id.note_activity, fragmentNote)
                     .commit();
         } else {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.note_land, fragmentNote)
-                    .commit();
-
             fragment.setArguments(getIntent().getExtras());
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.note_list_land, fragment)
+                    .replace(R.id.note_land, fragmentNote)
                     .commit();
         }
     }

@@ -21,36 +21,9 @@ public class NotesListFragment extends Fragment{
         TextView textViewNote1 = createTextView(linearLayout, notes[0]);
         TextView textViewNote2 = createTextView(linearLayout, notes[1]);
         TextView textViewNote3 = createTextView(linearLayout, notes[2]);
-
-        textViewNote1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), NoteActivity.class);
-                intent.putExtra(ARG_INDEX, notes[0]);
-                startActivity(intent);
-            }
-        });
-
-        textViewNote2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), NoteActivity.class);
-                intent.putExtra(ARG_INDEX, notes[1]);
-                startActivity(intent);
-            }
-        });
-
-        textViewNote3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), NoteActivity.class);
-                intent.putExtra(ARG_INDEX, notes[2]);
-                startActivity(intent);
-            }
-        });
+        clickOnTextViewPort(textViewNote1,0);
+        clickOnTextViewPort(textViewNote2,1);
+        clickOnTextViewPort(textViewNote3,2);
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -71,5 +44,29 @@ public class NotesListFragment extends Fragment{
         textView.setText(note.getName());
         layout.addView(textView);
         return textView;
+    }
+
+    public void clickOnTextViewPort(TextView textViewNote, int index){
+        textViewNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), NoteActivity.class);
+                intent.putExtra(ARG_INDEX, notes[index]);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void clickOnTextViewLand(TextView textViewNote, int index){
+        textViewNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), NoteActivity.class);
+                intent.putExtra(ARG_INDEX, notes[index]);
+                startActivity(intent);
+            }
+        });
     }
 }
