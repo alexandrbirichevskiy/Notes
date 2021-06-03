@@ -57,16 +57,4 @@ public class NotesListFragment extends Fragment{
             }
         });
     }
-
-    public void clickOnTextViewLand(TextView textViewNote, int index){
-        textViewNote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), NoteActivity.class);
-                intent.putExtra(ARG_INDEX, notes[index]);
-                startActivity(intent);
-            }
-        });
-    }
 }
