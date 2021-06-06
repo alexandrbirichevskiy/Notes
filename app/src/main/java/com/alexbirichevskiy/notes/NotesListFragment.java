@@ -51,7 +51,7 @@ public class NotesListFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), NoteActivity.class);
+                intent.setClass(getActivity(), MainActivity.class);
                 intent.putExtra(ARG_INDEX, notes[index]);
                 startActivity(intent);
             }
