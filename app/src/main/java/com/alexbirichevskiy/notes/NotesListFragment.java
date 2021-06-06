@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 public class NotesListFragment extends Fragment{
     private static final String ARG_INDEX = "index";
-    private Notes[] notes ={new Notes("Note 1", "description for note 1", "01.01.21"),
-                            new Notes("Note 2", "description for note 2", "02.01.21"),
-                            new Notes("Note 3", "description for note 3", "03.01.21")};
+    private Notes[] notes ={new Notes("Note 1", "description for note 1", System.nanoTime()),
+                            new Notes("Note 2", "description for note 2", System.nanoTime()),
+                            new Notes("Note 3", "description for note 3", System.nanoTime())};
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

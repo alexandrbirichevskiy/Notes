@@ -2,13 +2,15 @@ package com.alexbirichevskiy.notes;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Notes implements Parcelable {
     private String name;
     private String description;
-    private String date;
+    private long date;
 
-    public Notes(String name, String description, String date) {
+    public Notes(String name, String description, long date) {
         this.name = name;
         this.description = description;
         this.date = date;
@@ -17,7 +19,7 @@ public class Notes implements Parcelable {
     protected Notes(Parcel in) {
         name = in.readString();
         description = in.readString();
-        date = in.readString();
+        date = in.readLong();
     }
 
     public static final Creator<Notes> CREATOR = new Creator<Notes>() {
@@ -41,7 +43,7 @@ public class Notes implements Parcelable {
     }
 
     public String getDate() {
-        return date;
+        return new SimpleDateFormat("MM/dd/yyyy").format(new Date(date));
     }
 
     @Override
@@ -53,6 +55,6 @@ public class Notes implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(description);
-        dest.writeString(date);
+        dest.writeLong(date);
     }
 }

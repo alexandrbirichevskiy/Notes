@@ -38,6 +38,6 @@ public class NoteFragment extends Fragment{
         TextView textViewDate = view.findViewById(R.id.textViewDate);
         textViewName.setText(((Notes) note).getName());
         textViewDescription.setText(((Notes) note).getDescription());
-        textViewDate.setText(((Notes) note).getDate());
+        textViewDate.setText(String.valueOf(((Notes) note).getDate()));
     }
 }
