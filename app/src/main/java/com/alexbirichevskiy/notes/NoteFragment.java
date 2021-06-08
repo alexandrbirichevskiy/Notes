@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class NoteFragment extends Fragment{
-
     private static final String ARG_INDEX = "index";
     private Parcelable note;
 
@@ -36,8 +35,10 @@ public class NoteFragment extends Fragment{
         TextView textViewName = view.findViewById(R.id.textViewName);
         TextView textViewDescription = view.findViewById(R.id.textViewDescription);
         TextView textViewDate = view.findViewById(R.id.textViewDate);
-        textViewName.setText(((Notes) note).getName());
-        textViewDescription.setText(((Notes) note).getDescription());
-        textViewDate.setText(String.valueOf(((Notes) note).getDate()));
+        if (note != null){
+            textViewName.setText(((Notes) note).getName());
+            textViewDescription.setText(((Notes) note).getDescription());
+            textViewDate.setText(String.valueOf(((Notes) note).getDate()));
+        }
     }
 }
