@@ -25,6 +25,7 @@ public class NoteFragment extends Fragment{
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_note, container, false);
     }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         fillingNote(view, note);
