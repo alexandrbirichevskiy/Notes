@@ -65,7 +65,7 @@ public class NotesListFragment extends Fragment{
         textViewNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentStartTransaction(createNoteFragment(index), R.id.main_activity);
+                fragmentStartTransaction(createNoteFragment(index), R.id.fragments_container);
             }
         });
     }
