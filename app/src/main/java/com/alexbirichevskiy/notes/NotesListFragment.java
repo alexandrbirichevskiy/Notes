@@ -30,9 +30,6 @@ public class NotesListFragment extends Fragment{
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(new MyAdapter(notes));
-//        TextView textViewNote1 = createTextView(frameLayoutLayout, notes[0]);
-//        TextView textViewNote2 = createTextView(frameLayoutLayout, notes[1]);
-//        TextView textViewNote3 = createTextView(frameLayoutLayout, notes[2]);
         super.onViewCreated(view, savedInstanceState);
     }
 
