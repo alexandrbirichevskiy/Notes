@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class NoteFragment extends Fragment{
     private static final String ARG_INDEX = "index";
-    private Parcelable note;
+    private Notes note;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
