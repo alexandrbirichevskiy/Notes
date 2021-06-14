@@ -33,16 +33,6 @@ public class NotesListFragment extends Fragment{
 //        TextView textViewNote1 = createTextView(frameLayoutLayout, notes[0]);
 //        TextView textViewNote2 = createTextView(frameLayoutLayout, notes[1]);
 //        TextView textViewNote3 = createTextView(frameLayoutLayout, notes[2]);
-//        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-//            clickOnTextViewPort(textViewNote1,0);
-//            clickOnTextViewPort(textViewNote2,1);
-//            clickOnTextViewPort(textViewNote3,2);
-//        } else {
-//            fragmentStartTransaction(createNoteFragment(0), R.id.note_land);
-//            clickOnTextViewLand(textViewNote1,0);
-//            clickOnTextViewLand(textViewNote2,1);
-//            clickOnTextViewLand(textViewNote3,2);
-//        }
         super.onViewCreated(view, savedInstanceState);
     }
 
